@@ -6,9 +6,8 @@ if filereadable(expand('~/.vimrc.before'))
   source ~/.vimrc.before
 endif
 
-
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -185,7 +184,6 @@ let g:airline_detect_whitespace=0
 " Plugin overrides
 source ~/.vim/autocmd.vim
 source ~/.vim/format.vim
-" source ~/.vim/common.vim
 source ~/.vim/tmux.vim
 source ~/.vim/ctrlp.vim
 
@@ -200,9 +198,11 @@ set background=dark
 "   http://css-tricks.com/words-avoid-educational-writing/
 
 highlight TechWordsToAvoid ctermbg=red ctermfg=white
+
 function MatchTechWordsToAvoid()
   match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
+
 autocmd FileType markdown call MatchTechWordsToAvoid()
 autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
 autocmd InsertEnter *.md call MatchTechWordsToAvoid()
