@@ -4,6 +4,10 @@ update
 # Upgrade any already-installed formulae
 upgrade
 
+# Install rcm
+tap thoughtbot/formulae
+install rcm
+
 # Version Control
 install git
 install git-flow-avh
