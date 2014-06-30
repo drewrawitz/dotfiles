@@ -18,7 +18,7 @@ Install [rcm](https://github.com/thoughtbot/rcm):
 
 Install:
 
-    rcup -d dotfiles -x README.md
+    rcup -d dotfiles -x README.md -x Brewfile
 
 This will create symlinks for config files in your home directory.
 
