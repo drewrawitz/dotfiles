@@ -1,12 +1,17 @@
 drewrawitz dotfiles
 ===================
 
-Set zsh as your login shell:
+Screenshot
+-------
 
-    chsh -s $(which zsh)
+![](http://i.imgur.com/VkQW38J.jpg)
 
 Install
 -------
+
+Set zsh as your login shell:
+
+    chsh -s $(which zsh)
 
 Clone onto your laptop:
 
