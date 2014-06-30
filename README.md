@@ -12,7 +12,7 @@ Clone onto your laptop:
 
     git clone git://github.com/drewrawitz/dotfiles.git
 
-Install [rcm](https://github.com/thoughtbot/rcm):
+Install [rcm](https://github.com/thoughtbot/rcm) & other useful packages:
 
     brew bundle dotfiles/Brewfile
 
