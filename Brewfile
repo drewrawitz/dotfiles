@@ -19,5 +19,9 @@ install openssl
 
 tap homebrew/versions
 
+# Install Brew-Cask
+tap caskroom/cask
+install brew-cask
+
 # Remove outdated versions from the cellar
 cleanup
