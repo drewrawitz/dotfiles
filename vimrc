@@ -105,6 +105,7 @@ endif
 " =======================
 
 set autoindent
+set copyindent
 set smartindent
 set smarttab
 set shiftwidth=2
@@ -118,6 +119,12 @@ filetype indent on
 set list listchars=tab:\ \ ,trail:·   " Display tabs and trailing spaces visually
 set nowrap                            " Don't wrap lines
 set linebreak                         " Wrap lines at convenient points
+set undolevels=1000                   " More undos
+set visualbell                        " Use a visual indicator instead of a beep
+set showmatch                         " Highlight matching braces/tags
+set ignorecase                        " Ignore case when searching
+set smartcase                         " ...unless there's a capital letter in the query
+
 
 " Folds
 " =====
