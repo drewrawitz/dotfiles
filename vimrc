@@ -39,7 +39,6 @@ let mapleader=' '
 set gfn=Menlo:h14
 set encoding=utf-8
 set number                      " Line numbers are good
-set relativenumber
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
@@ -178,10 +177,6 @@ function! ToggleVExplorer()
 endfunction
 map <silent> <C-E> :call ToggleVExplorer()<CR>
 
-" 256 colors
-if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
-  set t_Co=256
-endif
 
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
@@ -327,5 +322,4 @@ endif
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
