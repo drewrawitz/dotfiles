@@ -53,6 +53,13 @@ set splitright                  " Opens vertical split right of current window
 set splitbelow                  " Opens horizontal split below current window
 "set shortmess=filnxtToOI       " see :help shortmess
                                 " http://items.sjbach.com/319/configuring-vim-right
+
+" Faster way to escape
+" ============
+
+imap jj <Esc>
+
+
 " CtrlP Plugin
 " ============
 
