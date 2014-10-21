@@ -12,7 +12,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'gmarik/vundle'
-Plugin 'https://github.com/kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Shougo/neocomplcache.vim'
 Plugin 'godlygeek/tabular'
@@ -147,6 +148,19 @@ set wildmode=longest,list,full
 set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
 set wildignore+=*vim/backups*
+
+" NERDTree Settings
+" =========
+
+" open NERDTree automatically if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" open NERDTree with ctrl+n
+map <C-n> :NERDTreeToggle<CR>
+
+" close vim if the only window left is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Get off my lawn
 " ==========
