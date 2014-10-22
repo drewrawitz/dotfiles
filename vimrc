@@ -1,207 +1,139 @@
-" Vim
-" ===
+" ----- Defaults -----
 
-" Source ~/.vimrc.before if it exists
-if filereadable(expand('~/.vimrc.before'))
-  source ~/.vimrc.before
-endif
+set nocompatible        " use Vim defaults.
 
-set nocompatible
-filetype off
+" ----- Leader -----
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-Plugin 'gmarik/vundle'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Shougo/neocomplcache.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jwhitley/vim-matchit'
+let mapleader = " "
 
-" Per-directory .vimrc files
-set exrc
-set secure
+" ----- Pathogen -----
 
-" Syntax
-" ======
+call pathogen#infect()  " Pathogen must be called before filetype detection.
+filetype plugin indent on
 
-syntax on
-syntax enable
-set t_Co=256
+" ----- Text formatting -----
 
-" General Config
-" ==============
+set autoindent          " automatic indent new lines.
+set smartindent         " make it smart.
+set copyindent          " copy structure of existing lines.
+set cindent             " enable automatic C program indenting.
+set nowrap              " do not wrap lines.
+set shiftwidth=4        " use four characters for tabs.
+set softtabstop=4       " mindblowing.
+set tabstop=4           " skullcracking.
+set expandtab           " expand tabs to spaces.
 
-let mapleader=' '
-set gfn=Menlo:h14
-set encoding=utf-8
-set number                      " Line numbers are good
-set backspace=indent,eol,start  " Allow backspace in insert mode
-set history=1000                " Store lots of :cmdline history
-set showcmd                     " Show incomplete cmds down the bottom
-set showmode                    " Show current mode down the bottom
-set gcr=a:blinkon0              " Disable cursor blink
-set autoread                    " Reload files changed outside vim
-set laststatus=2                " Always show status line
-set clipboard=unnamed           " Use system clipboard
-set hidden                      " Buffers can exist in the background
-set splitright                  " Opens vertical split right of current window
-set splitbelow                  " Opens horizontal split below current window
-"set shortmess=filnxtToOI       " see :help shortmess
-                                " http://items.sjbach.com/319/configuring-vim-right
+" ----- UI settings -----
 
-" Faster way to escape
-" ============
+set ruler               " always show cursor position.
+set showmode            " show the mode we're currently in.
+set showcmd             " always display commands.
+set showmatch           " highlight matching brackets/showbraces.
+set list                " enable listcharacters.
+set laststatus=2        " show status line.
+set cursorline          " visualize current line.
+set noerrorbells        " disable error bells.
+set visualbell          " disable error bells.
+set t_vb=               " disable error bells.
+set number              " show current number instead of relative one.
+set splitright          " Opens vertical split right of current window
+set splitbelow          " Opens horizontal split below current window
+set hidden              " Buffers can exist in the background
+set ttyfast             " Send more characters for redraws
+set mouse=a             " Enable mouse mode use in all modes
 
-imap jj <Esc>
+" ----- File navigation -----
 
+set wildmenu            " display all possibilities on autocomplete.
+set wildmode=longest,list,full
 
-" CtrlP Plugin
-" ============
+" ----- Movement -----
 
-nmap <leader>p :CtrlP<CR>
-nmap <leader>n :CtrlPBuffer<CR>
+" leave your visual world behind.
+nnoremap <up> :echoe "Use k"<CR>
+nnoremap <down> :echoe "Use j"<CR>
+nnoremap <left> :echoe "Use h"<CR>
+nnoremap <right> :echoe "Use l"<CR>
 
-" Mouse
-" ======
+" force myself to leave insert mode for movement.
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
-" Send more characters for redraws
-set ttyfast
+" no more arrows my dear.
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
 
-" Enable mouse use in all modes
-set mouse=a
+" Less finger wrecking window navigation.
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-" Set this to the name of your terminal that supports mouse codes.
-" Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
-set ttymouse=xterm2
+" ----- Searching -----
 
+set ignorecase          " no case sensitivity please.
+set smartcase           " search case sensitive if i'm willing to.
+set incsearch           " do incremental search.
 
-" Search Settings
-" ===============
+" ----- Syntax and such -----
 
-set incsearch        " Find the next match as we type the search
-set hlsearch         " Hilight searches by default
-set viminfo='100,f1  " Save up to 100 marks, enable capital marks
+syntax on               " enable syntax highlighting.
+syntax enable           " enable syntax highlighting.
+set t_Co=256            " set to use 256 colors
+set background=dark     " set dark background
+colorscheme solarized   " use the solarized color scheme
 
-" Turn Off Swap Files
-" ===================
+" ----- Formatting -----
 
-set noswapfile
-set nobackup
-set nowritebackup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set fileformat=unix     " always use unix fileformat.
+set encoding=utf-8      " force UTF-8 encoding.
+
+" ----- Custom mapping -----
+
+" F7 toggles highlighted search.
+map <F7> :set hlsearch!<CR>
+
+" make Y act like D, C, ... (i.e., yank up to the end of the line).
+map Y y$
+
+" ----- Remapping -----
+
+inoremap jj <ESC>       " leave insert mode with 'jj'
+
+" ----- Chromed out, pimped out -----
+
+" visualize stuff.
+set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:·
+
+" on editing, jump to last known cursor position.
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+" on save, remove trailing spaces.
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Do not pollute the working directory with swap and other files.
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Persistent Undo
-" ===============
+" custom statusline
+set statusline=%<%f\ %m%r\ %=line\ %l\ of\ %L\ %15.15(col\ %c%V%)\ %25.25(%{&ff},%{strlen(&fenc)?&fenc:'none'}\ %y%)\ "
 
-" Keep undo history across sessions, by storing in file
-" Only works in MacVim (gui) mode
-if has('gui_running')
-  set undodir=~/.vim/backups
-  set undofile
-  " Hide the toolbar
-  set guioptions-=T
-endif
+" .tpl files are mainly (x)html files, xhtml gives better omni completion.
+autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 
-" Indentation and Display
-" =======================
+" ----- Plugins -----
 
-set autoindent
-set copyindent
-set smartindent
-set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
+" Tell snipmate where to get our snippets.
+let g:snippets_dir = "~/.vim/snippets"
 
-filetype plugin on
-filetype indent on
-
-set list listchars=tab:\ \ ,trail:·   " Display tabs and trailing spaces visually
-set nowrap                            " Don't wrap lines
-set linebreak                         " Wrap lines at convenient points
-set undolevels=1000                   " More undos
-set visualbell                        " Use a visual indicator instead of a beep
-set showmatch                         " Highlight matching braces/tags
-set ignorecase                        " Ignore case when searching
-set smartcase                         " ...unless there's a capital letter in the query
-
-
-" Folds
-" =====
-
-set foldmethod=indent   " Fold based on indent
-set foldnestmax=3       " Deepest fold is 3 levels
-set nofoldenable        " Don't fold by default
-
-" Completion
-" ==========
-
-"set wildmode=list:longest
-set wildmode=longest,list,full
-set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
-set wildignore+=*vim/backups*
-
-" NERDTree Settings
-" =========
-
-" open NERDTree automatically if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" open NERDTree with ctrl+n
-map <C-n> :NERDTreeToggle<CR>
-
-" close vim if the only window left is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Get off my lawn
-" ==========
-
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-" Toggle Vexplore with Ctrl-E
-function! ToggleVExplorer()
-  if exists("t:expl_buf_num")
-      let expl_win_num = bufwinnr(t:expl_buf_num)
-      if expl_win_num != -1
-          let cur_win_nr = winnr()
-          exec expl_win_num . 'wincmd w'
-          close
-          exec cur_win_nr . 'wincmd w'
-          unlet t:expl_buf_num
-      else
-          unlet t:expl_buf_num
-      endif
-  else
-      exec '1wincmd w'
-      Vexplore
-      let t:expl_buf_num = bufnr("%")
-  endif
-endfunction
-map <silent> <C-E> :call ToggleVExplorer()<CR>
-
-
-" Hit enter in the file browser to open the selected
-" file with :vsplit to the right of the browser.
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-
-" Default to tree mode
-let g:netrw_liststyle=3
-
-" Change directory to the current buffer when opening files.
-set autochdir
+" CtrlP ignores.
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](\.git|vendor)$',
+    \ 'file': '\v\.(swp)$',
+    \ }
 
 " Airline Plugin
 let g:airline#extensions#tabline#enabled = 1
@@ -210,130 +142,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_whitespace=0
 
-" Plugin overrides
-source ~/.vim/autocmd.vim
-source ~/.vim/format.vim
-source ~/.vim/tmux.vim
-source ~/.vim/ctrlp.vim
+" ----- Fixes -----
 
-set background=dark
-
-" Highlight words to avoid in tech writing
-" =======================================
-"
-"   obviously, basically, simply, of course, clearly,
-"   just, everyone knows, However, So, easy
-
-"   http://css-tricks.com/words-avoid-educational-writing/
-
-highlight TechWordsToAvoid ctermbg=red ctermfg=white
-
-function MatchTechWordsToAvoid()
-  match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
-endfunction
-
-autocmd FileType markdown call MatchTechWordsToAvoid()
-autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
-autocmd InsertEnter *.md call MatchTechWordsToAvoid()
-autocmd InsertLeave *.md call MatchTechWordsToAvoid()
-autocmd BufWinLeave *.md call clearmatches()
-
-
-" This mapping sorts the css lines within a {} block.
-" ===================================================
-
-map S ?{jV/\v^\s*\}?$k:sort:noh
-
-function SortCss()
-   for i in range(line("1"), line("$"))
-       exe "/{"
-       exe "silent! normal j,S"
-   endfor
-endfunction
-
-command SortFile call SortCss()
-
-
-" Smart indent when entering insert mode with i on empty lines
-" ============================================================
-
-function! IndentWithI()
-  if len(getline('.')) == 0
-    return "\"_ddO"
-  else
-    return "i"
-  endif
-endfunction
-nnoremap <expr> i IndentWithI()
-
-
-" Neocomplcache plugin settings
-" ==============================
-
-"Note: This option must set it in .vimrc(_vimrc). NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Enable heavy features.
-" Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-"let g:neocomplcache_enable_underbar_completion = 1
-
-" Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
-\ 'default' : '',
-\ 'vimshell' : $HOME.'/.vimshell_hist',
-\ 'scheme' : $HOME.'/.gosh_completions'
-\ }
-
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g> neocomplcache#undo_completion()
-inoremap <expr><C-l> neocomplcache#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-return neocomplcache#smart_close_popup() . "\<CR>"
-" For no inserting <CR> key.
-"return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y> neocomplcache#close_popup()
-inoremap <expr><C-e> neocomplcache#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" Allow backspace for everything.
+set backspace=indent,eol,start
