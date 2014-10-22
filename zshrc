@@ -31,6 +31,7 @@ SAVEHIST=4096
 
 # awesome cd movements from zshkit
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+cdpath=($HOME/www $HOME/www/Personal)
 DIRSTACKSIZE=5
 
 # Enable extended globbing
