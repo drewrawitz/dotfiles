@@ -4,7 +4,7 @@ set nocompatible        " use Vim defaults.
 
 " ----- Leader -----
 
-let mapleader = " "
+let mapleader = "\<Space>"
 
 " ----- Pathogen -----
 
@@ -18,9 +18,9 @@ set smartindent         " make it smart.
 set copyindent          " copy structure of existing lines.
 set cindent             " enable automatic C program indenting.
 set nowrap              " do not wrap lines.
-set shiftwidth=4        " use four characters for tabs.
-set softtabstop=4       " mindblowing.
-set tabstop=4           " skullcracking.
+set shiftwidth=2        " use two characters for tabs.
+set softtabstop=2       " mindblowing.
+set tabstop=2           " skullcracking.
 set expandtab           " expand tabs to spaces.
 
 " ----- UI settings -----
@@ -36,6 +36,7 @@ set noerrorbells        " disable error bells.
 set visualbell          " disable error bells.
 set t_vb=               " disable error bells.
 set number              " show current number instead of relative one.
+set relativenumber      " show the relative line number
 set splitright          " Opens vertical split right of current window
 set splitbelow          " Opens horizontal split below current window
 set hidden              " Buffers can exist in the background
@@ -100,6 +101,9 @@ map <F7> :set hlsearch!<CR>
 " make Y act like D, C, ... (i.e., yank up to the end of the line).
 map Y y$
 
+" faster buffer switching
+nnoremap <Leader>b :CtrlPBuffer<CR>
+
 " ----- Remapping -----
 
 inoremap jj <ESC>       " leave insert mode with 'jj'
@@ -124,6 +128,9 @@ set statusline=%<%f\ %m%r\ %=line\ %l\ of\ %L\ %15.15(col\ %c%V%)\ %25.25(%{&ff}
 " .tpl files are mainly (x)html files, xhtml gives better omni completion.
 autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 
+" Setting the syntax for markdown files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " ----- Plugins -----
 
 " Tell snipmate where to get our snippets.
@@ -131,7 +138,7 @@ let g:snippets_dir = "~/.vim/snippets"
 
 " CtrlP ignores.
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.git|vendor)$',
+    \ 'dir':  '\v[\/](\.git|node_modules|vendor)$',
     \ 'file': '\v\.(swp)$',
     \ }
 
@@ -141,6 +148,9 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_whitespace=0
+
+" Commentary - Motion aware commenting
+ nmap cm  <Plug>Commentary
 
 " ----- Fixes -----
 
