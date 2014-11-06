@@ -60,3 +60,6 @@ nvm use 0.10.28
 
 # Increase ulimit for Gulp
 ulimit -n 10240
+
+# zsh-syntax-highlighting
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
