@@ -86,7 +86,7 @@ syntax on               " enable syntax highlighting.
 syntax enable           " enable syntax highlighting.
 set t_Co=256            " set to use 256 colors
 set background=dark     " set dark background
-colorscheme solarized   " use the solarized color scheme
+colorscheme base16-tomorrow
 
 " ----- Formatting -----
 
