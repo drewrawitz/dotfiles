@@ -15,7 +15,7 @@ Set zsh as your login shell:
 
 Clone onto your laptop:
 
-    git clone git://github.com/drewrawitz/dotfiles.git
+    git clone https://github.com/drewrawitz/dotfiles.git
 
 Install [rcm](https://github.com/thoughtbot/rcm) & other useful packages:
 
