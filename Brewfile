@@ -8,6 +8,9 @@ upgrade
 tap thoughtbot/formulae
 install rcm
 
+# For Tmux
+install reattach-to-user-namespace
+
 # Version Control
 install git
 install git-flow-avh
