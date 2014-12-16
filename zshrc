@@ -3,12 +3,12 @@ export ZSH=$HOME/.oh-my-zsh
 
 # default settings
 ZSH_THEME="agnoster"
-DEFAULT_USER="drew-work"
+DEFAULT_USER="drewrawitz"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew npm)
+plugins=(git brew npm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,13 +53,5 @@ export EDITOR=$VISUAL
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-# Node
-export PATH=$PATH:/usr/local/lib/node_modules
-source $(brew --prefix nvm)/nvm.sh
-nvm use 0.10.28
-
 # Increase ulimit for Gulp
 ulimit -n 10240
-
-# zsh-syntax-highlighting
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
