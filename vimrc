@@ -1,15 +1,28 @@
 " ----- Defaults -----
 
 set nocompatible        " use Vim defaults.
+filetype off            " required
 
 " ----- Leader -----
 
 let mapleader = "\<Space>"
 
-" ----- Pathogen -----
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-call pathogen#infect()  " Pathogen must be called before filetype detection.
-filetype plugin indent on
+" ----- Plugins -----
+"
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+
+Plugin 'chriskempson/base16-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " ----- Text formatting -----
 
@@ -84,7 +97,8 @@ set incsearch           " do incremental search.
 
 syntax on               " enable syntax highlighting.
 syntax enable           " enable syntax highlighting.
-set t_Co=256            " set to use 256 colors
+"set t_Co=256            " set to use 256 colors
+let base16colorspace=256 " Access colors present in 256 colorspace
 set background=dark     " set dark background
 colorscheme base16-tomorrow
 
