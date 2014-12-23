@@ -59,3 +59,28 @@ ulimit -n 10240
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Aliases
+  # Grep
+  alias grep='grep --exclude-dir={node_modules,bower_components,vendor} --exclude=*.min.* --color=always'
+
+  # Tmux
+  alias tmux='TERM=xterm-256color; tmux'
+
+  # Git
+  alias ga='git add'
+  alias gaa='git add -A'
+  alias gap='git add -p'
+  alias gau='git add -u'
+  alias gc='git commit'
+  alias gch='git checkout'
+  alias gcm='git commit -m'
+  alias gcp='git cherry-pick'
+  alias gd='git diff'
+  alias gdc='git diff --cached'
+  alias gf='git fetch; git status'
+  alias glg='git log --stat'
+  alias glp='git log -p'
+  alias gp='git push'
+  alias gpl='git pull'
+  alias gst='git status'
