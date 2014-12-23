@@ -1,8 +1,3 @@
-" ----- Defaults -----
-
-set nocompatible        " use Vim defaults.
-filetype off            " required
-
 " ----- Leader -----
 
 let mapleader = "\<Space>"
@@ -19,6 +14,8 @@ call vundle#begin()
 " "call vundle#begin('~/some/path/here')
 
 Plugin 'chriskempson/base16-vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-commentary'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -152,9 +149,10 @@ let g:snippets_dir = "~/.vim/snippets"
 
 " CtrlP ignores.
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.git|node_modules|vendor)$',
+    \ 'dir':  '\v[\/](\.git|node_modules|bower_components|vendor)$',
     \ 'file': '\v\.(swp)$',
     \ }
+let g:ctrlp_working_path_mode = 0
 
 " Airline Plugin
 let g:airline#extensions#tabline#enabled = 1
