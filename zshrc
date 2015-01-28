@@ -53,6 +53,9 @@ export EDITOR=$VISUAL
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
+# Ansible
+export ANSIBLE_HOSTS=/etc/ansible/hosts
+
 # Increase ulimit for Gulp
 ulimit -n 10240
 
