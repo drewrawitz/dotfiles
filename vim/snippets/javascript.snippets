@@ -8,12 +8,12 @@ snippet expr
 	app.listen(3000);
 # Express
 snippet appget
-	app.get('${1}', function(request, response){
+	app.get('${1}', function(req, res){
 	  ${2}
 	});
 # Express POST
 snippet apppost
-	app.post('${1}', function(request, response){
+	app.post('${1}', function(req, res){
 	  ${2}
 	});
 # Mocha describe block
