@@ -17,6 +17,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
 
 " SnipMate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -120,6 +121,9 @@ map Y y$
 
 " faster buffer switching
 nnoremap <Leader>b :CtrlPBuffer<CR>
+
+" NERDTree Toggling
+nmap <Leader>n :NERDTreeToggle<CR>
 
 " ----- Remapping -----
 
