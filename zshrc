@@ -87,3 +87,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
   alias gp='git push'
   alias gpl='git pull'
   alias gst='git status'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
