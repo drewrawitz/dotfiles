@@ -18,6 +18,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
+Bundle 'christoomey/vim-titlecase'
 
 " SnipMate
 Bundle "MarcWeber/vim-addon-mw-utils"
