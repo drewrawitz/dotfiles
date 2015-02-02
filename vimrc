@@ -18,6 +18,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
+Plugin 'mattn/emmet-vim'
+Plugin 'godlygeek/tabular'
 Bundle 'christoomey/vim-titlecase'
 
 " SnipMate
@@ -154,6 +156,11 @@ autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " ----- Plugins -----
+
+" Emmet
+let g:user_emmet_install_global = 0
+let g:user_emmet_leader_key='<Leader>'
+autocmd FileType html,css EmmetInstall
 
 " Tell snipmate where to get our snippets.
 let g:snippets_dir = "~/.vim/snippets"
