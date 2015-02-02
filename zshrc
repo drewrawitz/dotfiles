@@ -8,7 +8,7 @@ DEFAULT_USER="drewrawitz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew npm zsh-syntax-highlighting)
+plugins=(git brew npm zsh-syntax-highlighting gpg-agent tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,24 +69,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 
   # Tmux
   alias tmux='TERM=xterm-256color; tmux'
-
-  # Git
-  alias ga='git add'
-  alias gaa='git add -A'
-  alias gap='git add -p'
-  alias gau='git add -u'
-  alias gc='git commit'
-  alias gch='git checkout'
-  alias gcm='git commit -m'
-  alias gcp='git cherry-pick'
-  alias gd='git diff'
-  alias gdc='git diff --cached'
-  alias gf='git fetch; git status'
-  alias glg='git log --stat'
-  alias glp='git log -p'
-  alias gp='git push'
-  alias gpl='git pull'
-  alias gst='git status'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
