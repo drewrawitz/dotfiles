@@ -9,6 +9,7 @@ tap thoughtbot/formulae
 install rcm
 
 # For Tmux
+install tmux
 install reattach-to-user-namespace
 
 # Version Control
@@ -19,6 +20,7 @@ install git-flow-avh
 install mysql
 install node
 install openssl
+install the_silver_searcher
 
 tap homebrew/versions
 
