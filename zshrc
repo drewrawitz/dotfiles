@@ -8,7 +8,7 @@ DEFAULT_USER="drewrawitz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew npm zsh-syntax-highlighting gpg-agent tmux)
+plugins=(git brew npm zsh-syntax-highlighting gpg-agent tmux pass)
 
 source $ZSH/oh-my-zsh.sh
 
