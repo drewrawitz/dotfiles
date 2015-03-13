@@ -13,7 +13,7 @@ GRID_WIDTH = 2;
 
 GRID_HEIGHT = 2;
 
-EDITOR = "Vim";
+EDITOR = "Emacs";
 
 BROWSER = "Google Chrome";
 
@@ -21,7 +21,7 @@ TERMINAL = "iTerm";
 
 FINDER = "Finder";
 
-MUSIC = "Spotify";
+MUSIC = "iTunes";
 
 VIDEO = "MPlayerX";
 
@@ -500,6 +500,40 @@ key_binding('space', mash, function() {
   return Window.focusedWindow().toFullScreen();
 });
 
+key_binding('0', mash, function() {
+  return App.focusOrStart(EDITOR);
+});
+
+key_binding('9', mash, function() {
+  return App.focusOrStart(TERMINAL);
+});
+
+key_binding('8', mash, function() {
+  return App.focusOrStart(BROWSER);
+});
+
+key_binding('7', mash, function() {
+  return App.focusOrStart(FINDER);
+});
+
+key_binding('V', mash, function() {
+  return App.focusOrStart(VIDEO);
+});
+
+key_binding('B', mash, function() {
+  return App.focusOrStart(MUSIC);
+});
+
+key_binding('5', mash, function() {
+  return switchLayout('Editor and Browser');
+});
+
+key_binding('4', mash, function() {
+  return switchLayout('Editor and Terminal');
+});
+
+key_binding('3', mash, function() {
+  return switchLayout('Terminal and Browser');
 });
 
 key_binding('2', mash, function() {
