@@ -1,6 +1,6 @@
 " ----- Leader -----
 
-let mapleader = "\<Space>"
+let mapleader = "\<F5>"
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
