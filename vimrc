@@ -1,6 +1,6 @@
 " ----- Leader -----
 
-let mapleader = "\<F5>"
+let mapleader = "\<Space>"
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -89,6 +89,10 @@ vnoremap <down> <nop>
 vnoremap <left> <nop>
 vnoremap <right> <nop>
 
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
 " Less finger wrecking window navigation.
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -140,6 +144,9 @@ set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:·
 
 " on editing, jump to last known cursor position.
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
 " on save, remove trailing spaces.
 autocmd BufWritePre * :%s/\s\+$//e
