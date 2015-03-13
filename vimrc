@@ -21,6 +21,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
 Bundle 'christoomey/vim-titlecase'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " SnipMate
 Bundle "MarcWeber/vim-addon-mw-utils"
