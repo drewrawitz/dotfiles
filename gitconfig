@@ -1,7 +1,3 @@
-[alias]
-  l = log --pretty=colored
-[pretty]
-  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [user]
   name = Drew Rawitz
   email = email@drewrawitz.com
@@ -9,9 +5,11 @@
   user = drewrawitz
 [core]
 	quotepath = false
-	excludesfile = /Users/drew-work/.gitignore_global
+	excludesfile = ~/.gitignore
 [alias]
   l = log --pretty='format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar' --date=short
+[commit]
+  template = ~/.gitmessage
 [color]
   diff = auto
   status = auto
