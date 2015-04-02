@@ -4,7 +4,7 @@ drewrawitz dotfiles
 Screenshot
 -------
 
-![](http://i.imgur.com/VkQW38J.jpg)
+![](http://i.imgur.com/dSaeMlo.png)
 
 Install
 -------
