@@ -1,6 +1,6 @@
 " ----- Leader -----
 
-let mapleader = "\<F5>"
+let mapleader = "\<Space>"
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -20,7 +20,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
-Plugin 'vimwiki/vimwiki'
 Bundle 'christoomey/vim-titlecase'
 Bundle 'christoomey/vim-tmux-navigator'
 
@@ -70,6 +69,10 @@ set mouse=a             " Enable mouse mode use in all modes
 set wildmenu            " display all possibilities on autocomplete.
 set wildmode=longest,list,full
 
+" Saving a file
+nnoremap <Leader>w :w<CR>
+command! W  write
+"
 " ----- Movement -----
 
 " leave your visual world behind.
@@ -105,6 +108,7 @@ nnoremap <C-H> <C-W><C-H>
 set ignorecase          " no case sensitivity please.
 set smartcase           " search case sensitive if i'm willing to.
 set incsearch           " do incremental search.
+set hlsearch            " search highlighting
 
 " ----- Syntax and such -----
 
@@ -187,9 +191,6 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_whitespace=0
-
-" VimWiki Plugin
-let g:vimwiki_list = [{'path': '$HOME/Dropbox/Wiki'}]
 
 " Commentary - Motion aware commenting
  nmap cm  <Plug>Commentary
