@@ -17,6 +17,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
@@ -104,6 +105,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" When pasting, go to the end of the pasted content
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " ----- Searching -----
 
 set ignorecase          " no case sensitivity please.
@@ -128,12 +134,12 @@ set encoding=utf-8      " force UTF-8 encoding.
 " ----- Custom mapping -----
 
 " Faster buffer switching
-map <C-n> :bnext<CR>
-map <C-b> :bprev<CR>
+map <C-m> :bnext<CR>
+map <C-n> :bprev<CR>
 
 " Faster tab switching
-map <C-]> :tabn<CR>
-map <C-[> :tabp<CR>
+nmap <Leader>' :tabn<CR>
+nmap <Leader>; :tabp<CR>
 
 " F7 toggles highlighted search.
 map <F7> :set hlsearch!<CR>
