@@ -20,6 +20,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
+Plugin 'bling/vim-airline'
 Bundle 'christoomey/vim-titlecase'
 Bundle 'christoomey/vim-tmux-navigator'
 
@@ -126,6 +127,14 @@ set encoding=utf-8      " force UTF-8 encoding.
 
 " ----- Custom mapping -----
 
+" Faster buffer switching
+map <C-n> :bnext<CR>
+map <C-b> :bprev<CR>
+
+" Faster tab switching
+map <C-]> :tabn<CR>
+map <C-[> :tabp<CR>
+
 " F7 toggles highlighted search.
 map <F7> :set hlsearch!<CR>
 
@@ -190,7 +199,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
-let g:airline_detect_whitespace=0
 
 " Commentary - Motion aware commenting
  nmap cm  <Plug>Commentary
