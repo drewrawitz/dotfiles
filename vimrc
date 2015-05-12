@@ -151,7 +151,7 @@ map Y y$
 nnoremap <Leader>b :CtrlPBuffer<CR>
 
 " NERDTree Toggling
-nmap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " ----- Remapping -----
 
@@ -187,7 +187,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Emmet
 let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key='<Leader>'
+let g:user_emmet_leader_key='<F5>'
 autocmd FileType html,css,scss,sass EmmetInstall
 
 " Tell snipmate where to get our snippets.
@@ -207,7 +207,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
 " Commentary - Motion aware commenting
- nmap cm  <Plug>Commentary
+nmap cm  <Plug>Commentary
 
 " ----- Fixes -----
 
