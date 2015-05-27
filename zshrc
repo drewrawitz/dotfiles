@@ -45,6 +45,8 @@ bindkey -v
 bindkey "^F" vi-cmd-mode
 bindkey jj vi-cmd-mode
 
+bindkey "^R" history-incremental-search-backward
+
 # use vim as the visual editor
 export VISUAL=vim
 export EDITOR=$VISUAL
@@ -69,6 +71,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 
   # Tmux
   alias tmux='TERM=xterm-256color; tmux'
+
+  # Clear
+  alias c='clear'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
