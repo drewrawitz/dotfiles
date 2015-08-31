@@ -110,6 +110,10 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
+" scroll the viewport faster
+nnoremap <C-j> 3<C-e>
+nnoremap <C-k> 3<C-y>
+
 " ----- Searching -----
 
 set ignorecase          " no case sensitivity please.
