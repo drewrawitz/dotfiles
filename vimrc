@@ -191,7 +191,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Emmet
 let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key='<F5>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 autocmd FileType html,css,scss,sass EmmetInstall
 
 " Tell snipmate where to get our snippets.
