@@ -16,7 +16,7 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/.vim/bundle/V
 Create symlinks
 ```sh
 $ ln -s dotfiles/.vim/ ~/
-$ ln -s dotfiles/.vimrc ~/.vimrc
+$ ln -s dotfiles/vimrc ~/.vimrc
 ```
 
 Then open up Vim and run
