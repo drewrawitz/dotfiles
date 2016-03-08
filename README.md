@@ -7,14 +7,22 @@ Vim
 -------
 
 #### First Steps
-1. Get [Vundle]:
-`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/.vim/bundle/Vundle.vim`
-1. Create symlinks
+Get [Vundle]:
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/.vim/bundle/Vundle.vim`
+```
+
+Create symlinks
 ```sh
 $ ln -s dotfiles/.vim/ ~/
 $ ln -s dotfiles/.vimrc ~/.vimrc
 ```
-1. Install plugins by opening up vim and typing: `:PluginInstall`
+
+Then open up Vim and run
+
+```
+:PluginInstall
+```
 
 #### Color Scheme
 
