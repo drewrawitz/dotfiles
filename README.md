@@ -1,12 +1,14 @@
 My Dotfiles
 ===================
 
+This is a collection of my personal dotfiles that I have configured to my liking throughout the years. At the moment, it's a bit of a manual process in terms of setting up the symbolic links.  In the future I might add an installer script which would handle all of that automatically.
+
 Vim
 -------
 
 1. Get [Vundle]:
 
-   `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+   `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/.vim/bundle/Vundle.vim`
 
 2. Create symlinks
     `$ ln -s dotfiles/.vim/ ~/`
@@ -16,7 +18,7 @@ Vim
 
 #### Color Scheme
 
-* [atom-dark-256](https://github.com/gosukiwi/vim-atom-dark)
+* [base16-tomorrow-dark](https://github.com/chriskempson/base16-vim)
 
 #### Plugins
 
