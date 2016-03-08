@@ -1,32 +1,34 @@
-drewrawitz dotfiles
+My Dotfiles
 ===================
 
-Screenshot
+Vim
 -------
 
-![](http://i.imgur.com/dSaeMlo.png)
+1. Get [Vundle]:
 
-Install
--------
+   `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
-Set zsh as your login shell:
+2. Create symlinks
+    `$ ln -s dotfiles/vim/ ~/.vim/`
+    `$ ln -s dotfiles/.vimrc ~/.vimrc`
 
-    chsh -s $(which zsh)
+3. Install Plugins. Open up Vim and type `:PluginInstall`
 
-Clone onto your laptop:
+#### Color Scheme
 
-    git clone https://github.com/drewrawitz/dotfiles.git
+* [atom-dark-256](https://github.com/gosukiwi/vim-atom-dark)
 
-Install [rcm](https://github.com/thoughtbot/rcm) & other useful packages:
+#### Plugins
 
-    brew bundle dotfiles/Brewfile
+* [NERD Tree](https://github.com/scrooloose/nerdtree)
+* [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+* [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
+* [ag.vim](https://github.com/rking/ag.vim)
+* [greplace.vim](https://github.com/skwp/greplace.vim)
+* [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
+* [Tabular](https://github.com/godlygeek/tabular)
+* [snipmade.vim](https://github.com/msanders/snipmate.vim)
+* [surround.vim](https://github.com/tpope/vim-surround)
 
-Install:
 
-    rcup -d dotfiles -x README.md -x Brewfile
-
-This will create symlinks for config files in your home directory.
-
-You can safely run `rcup` multiple times to update:
-
-    rcup
+[Vundle]:http://github.com/VundleVim/Vundle.vim
