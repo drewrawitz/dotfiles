@@ -43,3 +43,18 @@ Then open up Vim and run
 
 
 [Vundle]:http://github.com/VundleVim/Vundle.vim
+
+Phoenix
+-------
+
+![](http://g.recordit.co/vYtCxSFH2N.gif)
+
+I use [Phoeinx](https://github.com/kasper/phoenix), a lightweight OS X window and app manager scriptable with JavaScript. Phoenix is extremely customizable to where you can even set up key bindings to open up certain applications at a certain split. Since I use [Alfred](https://www.alfredapp.com/) to open up my applications, I only use Phoenix for quickly resizing my windows.
+
+My prefix key is `Ctrl + Option + Command`. 
+
+Full screen split: `<Prefix> f`
+50% top split: `<Prefix> up`
+50% right split: `<Prefix> right`
+50% bottom split: `<Prefix> down`
+50% left split: `<Prefix> left`
