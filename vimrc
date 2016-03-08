@@ -10,7 +10,6 @@ let mapleader = "\<Space>"
 set showmode                        " show the mode we're currently in.
 set showcmd                         " always display commands.
 set showmatch                       " highlight matching brackets/showbraces.
-set laststatus=2                    " show status line.
 set noerrorbells visualbell t_vb=   " disable error bells.
 set mouse=a                         " enable mouse mode use in all modes
 set hidden                          " buffers can exist in the background
@@ -21,15 +20,19 @@ set wildmenu            " display all possibilities on autocomplete.
 set wildmode=longest,list,full
 
 "--------------- Visuals --------------"
-colorscheme atom-dark-256
+let base16colorspace=256
+set background=dark
+colorscheme base16-tomorrow
 set t_CO=256
 
 " Faking a custom left padding for each window
 hi LineNr ctermbg=bg
+hi LineNr ctermfg=darkgrey
 set foldcolumn=2
 hi foldcolumn ctermbg=bg
 
 " Get rid of ugly split borders.
+set fillchars+=vert:\|
 hi vertsplit ctermbg=bg ctermfg=bg
 
 " Do not pollute the working directory with swap and other files.

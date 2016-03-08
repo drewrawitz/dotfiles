@@ -9,7 +9,7 @@ Vim
    `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 2. Create symlinks
-    `$ ln -s dotfiles/vim/ ~/.vim/`
+    `$ ln -s dotfiles/.vim/ ~/`
     `$ ln -s dotfiles/.vimrc ~/.vimrc`
 
 3. Install Plugins. Open up Vim and type `:PluginInstall`
