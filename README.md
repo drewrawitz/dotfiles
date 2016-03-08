@@ -53,7 +53,7 @@ I use [Phoeinx](https://github.com/kasper/phoenix), a lightweight OS X window an
 
 My prefix key is `Ctrl + Option + Command`. 
 
-* Full screen split: `<Prefix> f`
+* Full screen split: `<Prefix> space`
 * 50% top split: `<Prefix> up`
 * 50% right split: `<Prefix> right`
 * 50% bottom split: `<Prefix> down`
