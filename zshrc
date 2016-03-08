@@ -2,7 +2,8 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # default settings
-ZSH_THEME="agnoster"
+ZSH_CUSTOM=$HOME/dotfiles/zsh
+ZSH_THEME="cloud"
 DEFAULT_USER="$USER"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
