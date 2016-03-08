@@ -10,7 +10,7 @@ Vim
 #### First Steps
 Get [Vundle]:
 ```
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/.vim/bundle/Vundle.vim`
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/.vim/bundle/Vundle.vim
 ```
 
 Create symlinks
