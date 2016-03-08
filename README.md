@@ -5,6 +5,7 @@ This is a collection of my personal dotfiles that I have configured to my liking
 
 Vim
 -------
+![](http://g.recordit.co/QnXY0zCi1F.gif)
 
 #### First Steps
 Get [Vundle]:
