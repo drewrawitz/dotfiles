@@ -1,0 +1,11 @@
+snippet printr
+	echo "<pre>";
+	print_r(${1});
+	echo "</pre>";
+
+snippet repeater
+	if(have_rows('${1}')) :
+		while(have_rows('${2}')) : the_row();
+			${3}
+		endwhile;
+	endif;
