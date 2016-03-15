@@ -8,6 +8,7 @@
   excludesfile = ~/.gitignore_global
 [alias]
   l = log --pretty='format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar' --date=short
+	stats = shortlog -sn
 [commit]
   template = ~/.gitmessage
 [color]
