@@ -40,6 +40,7 @@ Then open up Vim and run
 * [Tabular](https://github.com/godlygeek/tabular)
 * [snipmade.vim](https://github.com/msanders/snipmate.vim)
 * [surround.vim](https://github.com/tpope/vim-surround)
+* [commentary.vim](https://github.com/tpope/vim-commentary)
 
 
 [Vundle]:http://github.com/VundleVim/Vundle.vim
@@ -51,7 +52,7 @@ Phoenix
 
 I use [Phoenix](https://github.com/kasper/phoenix), a lightweight OS X window and app manager scriptable with JavaScript. Phoenix is extremely customizable to where you can even set up key bindings to open up certain applications at a certain split. Since I use [Alfred](https://www.alfredapp.com/) to open up my applications, I only use Phoenix for quickly resizing my windows.
 
-My prefix key is `Ctrl + Option + Command`. 
+My prefix key is `Ctrl + Option + Command`.
 
 * Full screen split: `<Prefix> space`
 * 50% top split: `<Prefix> up`
