@@ -4,7 +4,7 @@ My Dotfiles
 This is a collection of my personal dotfiles that I have configured to my liking throughout the years. At the moment, it's a bit of a manual process in terms of setting up the symbolic links.  In the future I might add an installer script which would handle all of that automatically.
 
 Vim
--------
+======
 ![](http://g.recordit.co/QnXY0zCi1F.gif)
 
 #### First Steps
@@ -46,18 +46,18 @@ Then open up Vim and run
 [Vundle]:http://github.com/VundleVim/Vundle.vim
 
 iTerm2
--------
+======
 
 #### Text
-Regular Font: `14pt Monaco`
-Vertical line height: `1.4`
-Non-ASCII Font: `14pt Source Code Powerline`
+* Regular Font: `14pt Monaco`
+* Vertical line height: `1.4`
+* Non-ASCII Font: `14pt Source Code Powerline`
 
 #### Colors
 [base16-tomorrow-dark-256](https://github.com/chriskempson/base16-iterm2/blob/master/base16-tomorrow.dark.256.itermcolors)
 
 Phoenix
--------
+======
 
 ![](http://g.recordit.co/vYtCxSFH2N.gif)
 
