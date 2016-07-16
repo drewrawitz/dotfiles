@@ -40,8 +40,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " ----- Text formatting -----
 set nowrap              " do not wrap lines.
-set shiftwidth=2        " use two characters for tabs.
-set softtabstop=2       " mindblowing.
+set shiftwidth=2        " use four characters for tabs.
 set tabstop=2           " skullcracking.
 set expandtab           " expand tabs to spaces.
 
@@ -130,7 +129,7 @@ autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 nmap <C-e> :CtrlPMRUFiles<cr>
 
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.git|node_modules|bower_components|vendor)$',
+    \ 'dir':  '\v[\/](\.git|deps|_build|node_modules|bower_components|vendor)$',
     \ 'file': '\v\.(swp)$',
     \ }
 let g:ctrlp_working_path_mode = 0
