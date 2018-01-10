@@ -9,7 +9,7 @@ DEFAULT_USER="$USER"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast vagrant brew npm tmux rsync web-search osx zsh-syntax-highlighting z)
+plugins=(gitfast vagrant brew npm tmux zsh-nvm rsync web-search osx zsh-syntax-highlighting z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,3 +94,7 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
